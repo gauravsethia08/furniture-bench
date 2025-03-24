@@ -68,3 +68,8 @@ register(
     id="FurnitureImageFeatureDummy-v0",
     entry_point="furniture_bench.envs.policy_envs.furniture_image_feature_dummy:FurnitureImageFeatureDummy",
 )
+
+register(
+    id="FurnitureSimBiManual-v0",
+    entry_point="furniture_bench.envs.furniture_sim_bimanual_env:FurnitureSimBiManualEnv",
+)

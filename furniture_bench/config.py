@@ -57,6 +57,47 @@ config: Dict[str, Any] = {
         "rot_noise_med": 15,  # Rotational noise for medium randomness.
         "motion_stopped_counter_threshold": 50,  # Number of steps to wait when the robot stopped moving before declaring the episode done.
     },
+
+    "robot2": {
+        "server_ip": SERVER_IP,
+        "hz": 10,
+        "reset_joints": [
+            -0.02630888,
+            0.3758795,
+            0.12485036,
+            -2.1383357,
+            -0.09431414,
+            2.49649072,
+            0.01921718,
+        ],
+        "base_tag_xyz": (0.23 + 0.0715, 0, -ROBOT_HEIGHT),
+        "tag_base_from_robot_base": get_mat(
+            (0.23 + 0.0715, -0.3, -ROBOT_HEIGHT), (np.pi, 0, np.pi / 2)
+        ),  # Relative pose of the base tag from the robot base. This can be used to convert the pose in the base tag's coordinate to the robot's coordinate.
+        "max_gripper_width": {
+            "square_table": 0.065,
+            "one_leg": 0.065,
+            "desk": 0.065,
+            "stool": 0.065,
+            "chair": 0.065,
+            "drawer": 0.065,
+            "round_table": 0.065,
+            "cabinet": 0.08,
+            "lamp": 0.07,
+            "mug_rack": 0.07,
+            "factory_peg_hole": 0.07,
+            "factory_nut_bolt": 0.07,
+        },
+        "position_limits": [
+            [0.3, 0.8],
+            [-0.55, 0.55],
+            [0.005, 0.4],
+        ],  # End-effector position limits.
+        "pos_noise_med": 0.05,  # Positional noise for medium randomness.
+        "rot_noise_med": 15,  # Rotational noise for medium randomness.
+        "motion_stopped_counter_threshold": 50,  # Number of steps to wait when the robot stopped moving before declaring the episode done.
+    },
+    
     "camera": {
         "num_camera": 3,
         1: {
